@@ -3,7 +3,7 @@ import arrow from "./angle-arrow-down.png";
 // import styled from "styled-components";
 import PropTypes from "prop-types";
 
-function SelectItem({ arrayProps }) {
+function SelectItem({ arrayProps, selectImg }) {
   const [option, setOption] = useState("");
   const [selected, setSelected] = useState(false);
 
@@ -31,7 +31,7 @@ function SelectItem({ arrayProps }) {
         </p>
         <img
           className="selectItem__field--img"
-          src={arrow}
+          src={selectImg}
           alt="Fleche ouverture du select"
         />
       </div>
@@ -61,6 +61,7 @@ SelectItem.propTypes = {
       abbreviation: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
+  selectImg: PropTypes.string.isRequired,
 };
 
 export { SelectItem };
